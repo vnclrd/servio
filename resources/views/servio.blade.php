@@ -14,14 +14,15 @@
         </header>
 
         <section class="controls">
-            <input
-                type="search"
-                id="searchInput"
-                placeholder="Search by title or author..."
-                aria-label="Search books by title or author"
-            >
-            <button type="button" id="clearSearchBtn">Clear</button>
-        </section>
+          <input
+              type="search"
+              id="searchInput"
+              placeholder="Search by title or author..."
+              aria-label="Search books by title or author"
+          >
+          <button type="button" id="searchBtn">Search</button>
+          <button type="button" id="clearSearchBtn">Clear</button>
+      </section>
 
         <div id="feedbackBanner" class="feedback hidden" role="status" aria-live="polite"></div>
 

@@ -1,6 +1,7 @@
 const API_BASE = '/api/books';
 
 const searchInput = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
 const clearSearchBtn = document.getElementById('clearSearchBtn');
 const booksTableBody = document.getElementById('booksTableBody');
 const feedbackBanner = document.getElementById('feedbackBanner');
@@ -94,12 +95,14 @@ function renderBooks(books) {
 
 async function toggleBookStatus(bookId, nextStatus, buttonEl) {
     const originalText = buttonEl.textContent;
+    const method = nextStatus === 'Borrowed' ? 'POST' : 'PUT';
+
     buttonEl.disabled = true;
     buttonEl.textContent = 'Updating...';
 
     try {
         const response = await fetch(`${API_BASE}/${encodeURIComponent(bookId)}/status`, {
-            method: 'PATCH',
+            method,
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -131,6 +134,12 @@ searchInput.addEventListener('input', (event) => {
     debounceTimer = setTimeout(() => {
         fetchBooks(value);
     }, 200);
+});
+
+// Search button: runs the search immediately (skips the typing delay)
+searchBtn.addEventListener('click', () => {
+    clearTimeout(debounceTimer);
+    fetchBooks(searchInput.value);
 });
 
 clearSearchBtn.addEventListener('click', () => {
