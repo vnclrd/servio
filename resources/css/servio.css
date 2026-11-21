@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f6f7f9;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+}
+
+.header {
+    margin-bottom: 1.5rem;
+}
+
+.header h1 {
+    margin: 0 0 0.25rem;
+    font-size: 2rem;
+}
+
+.header p {
+    margin: 0;
+    color: #6b7280;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.controls input[type="search"] {
+    flex: 1;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+button {
+    padding: 0.6rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+button:hover:not(:disabled) {
+    background: #f3f4f6;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.feedback {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.feedback.hidden {
+    display: none;
+}
+
+.feedback.success {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.feedback.error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.table-wrapper {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background: #f9fafb;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #4b5563;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.badge-available {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.badge-borrowed {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.btn-toggle {
+    background: #111827;
+    color: #fff;
+    border-color: #111827;
+}
+
+.btn-toggle:hover:not(:disabled) {
+    background: #374151;
+}
+
+.empty-state {
+    text-align: center;
+    color: #6b7280;
+    padding: 2rem 1rem;
+}
+
+.error-text {
+    color: #991b1b;
+}

@@ -10,6 +10,7 @@ use Illuminate\Validation\Rule;
 
 class BookController extends Controller
 {
+    // Controller method to get the books from the database
     public function index(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -42,6 +43,7 @@ class BookController extends Controller
         ], 200);
     }
 
+    // Controller method to update the statuses of the books in the database
     public function updateStatus(Request $request, int $bookId): JsonResponse
     {
         if ($bookId < 1) {

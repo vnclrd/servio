@@ -10,6 +10,7 @@ class BookSeeder extends Seeder
     /**
      * Run the database seeds.
      */
+    // Populate the database with these mock data of books, authors, and statuses
     public function run(): void
     {
         $books = [
@@ -21,6 +22,7 @@ class BookSeeder extends Seeder
             ['title' => 'Better Than The Movies', 'author' => 'Lynn Painter', 'status' => 'Available'],
         ];
 
+        // Safeguard to not duplicate books when running again
         foreach ($books as $book) {
             Book::firstOrCreate(
                 ['title' => $book['title'], 'author' => $book['author']],
