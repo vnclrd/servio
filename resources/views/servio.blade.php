@@ -20,9 +20,10 @@
               placeholder="Search by title or author..."
               aria-label="Search books by title or author"
           >
+          <!-- Buttons -->
           <button type="button" id="searchBtn">Search</button>
           <button type="button" id="clearSearchBtn">Clear</button>
-      </section>
+        </section>
 
         <div id="feedbackBanner" class="feedback hidden" role="status" aria-live="polite"></div>
 

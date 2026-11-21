@@ -189,7 +189,7 @@ When nothing matches, the request still succeeds with an empty list:
 
 #### Sample error response — `422 Unprocessable Content`
 
-`GET /api/books?search[]=a` (not a string) or a search text longer than 255 characters:
+`GET /api/books?search[]=a` (`search` is not a string):
 
 ```json
 {
@@ -199,6 +199,8 @@ When nothing matches, the request still succeeds with an empty list:
   }
 }
 ```
+
+A search text longer than 255 characters returns the same shape with the message `The search field must not be greater than 255 characters.`
 
 ---
 
